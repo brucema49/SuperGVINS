@@ -66,3 +66,20 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# Local project notes and replay outputs
+/issue/
+/output/
+/data/
+*.bag
+
+# Locally supplied model files
+/weights/*.onnx
+
+# Python and catkin outputs
+__pycache__/
+*.py[cod]
+.pytest_cache/
+/devel/
+/install/
+/logs/

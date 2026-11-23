@@ -1,0 +1,14 @@
+<launch>
+    <arg name="config_path" default="$(find supergvins)/../config/visensor_f9p/visensor_left_f9p_config.yaml" />
+    <arg name="supergvins_path" default="$(find supergvins)/../" />
+
+    <node name="supergvins_feature_tracker" pkg="supergvins_feature_tracker" type="supergvins_feature_tracker" output="log">
+        <param name="config_file" type="string" value="$(arg config_path)" />
+        <param name="gvins_folder" type="string" value="$(arg supergvins_path)" />
+    </node>
+
+    <node name="supergvins" pkg="supergvins" type="supergvins" output="screen">
+        <param name="config_file" type="string" value="$(arg config_path)" />
+        <param name="gvins_folder" type="string" value="$(arg supergvins_path)" />
+    </node>
+</launch>
